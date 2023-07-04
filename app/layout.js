@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
   title: "GrafBase",
@@ -9,12 +10,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className="flex flex-col w-screen h-screen">
+          <Navbar />
+          <main className="w-full h-full overflow-y-auto">
+            <div className="p-5">{children}</div>
+            <Footer />
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
