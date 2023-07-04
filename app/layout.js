@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className="flex flex-col w-screen h-screen">
           <Navbar />
-          <main className="w-full h-full overflow-y-auto">
-            <div className="p-5">{children}</div>
+          <main className="flex flex-col w-full h-full overflow-y-auto">
+            <div className="w-full h-full p-5">{children}</div>
             <Footer />
           </main>
         </body>
