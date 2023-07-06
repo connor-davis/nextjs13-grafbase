@@ -1,9 +1,6 @@
 # Welcome to Grafbase!
 # Define your data models, integrate auth, permission rules, custom resolvers, search, and more with Grafbase.
 
-# Integrate Auth
-# https://grafbase.com/docs/auth
-#
 schema
   @auth(
     providers: [{ type: oidc, issuer: "{{ env.CLERK_ISSUER_URL }}" }]
